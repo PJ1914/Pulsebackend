@@ -10,9 +10,6 @@
         "src": "/(.*)",
         "dest": "backend/wsgi.py"
       }
-    ],
-    "env": {
-      "DATABASE_URL": "YOUR_DATABASE_URL"
-    }
+    ]
   }
   
