@@ -117,7 +117,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Static files storage
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
@@ -126,7 +126,10 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CORS Configuration
-CORS_ALLOWED_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS', '').split(',')
+CORS_ALLOWED_ORIGINS = [
+    origin for origin in os.getenv('CORS_ALLOWED_ORIGINS', '').split(',')
+    if origin.strip() and "://" in origin
+]
 
 # Ensure Django finds templates in the React build directory
-TEMPLATES[0]['DIRS'] = [os.path.join(BASE_DIR, 'frontend/build')]
+TEMPLATES[0]['DIRS'] = [BASE_DIR / 'frontend/build']
