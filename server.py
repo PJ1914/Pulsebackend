@@ -27,4 +27,4 @@ def gem():
         return jsonify({'error':f'error at line {e.__traceback__.tb_lineno}: {e}'}),400
 
 if __name__=='__main__':
-    app.run('localhost',os.environ['PORT'],debug=True)
+    app.run('localhost',os.environ['PORT'])
