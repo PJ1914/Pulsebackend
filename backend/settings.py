@@ -127,7 +127,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CORS Configuration
 CORS_ALLOWED_ORIGINS = [
-    origin for origin in os.getenv('CORS_ALLOWED_ORIGINS', '').split(',')
+    origin for origin in os.getenv('CORS_ALLOWED_ORIGINS',).split(',')
     if origin.strip() and "://" in origin
 ]
 
