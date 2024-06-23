@@ -18,6 +18,7 @@ import os
 import cv2
 import numpy as np  
 
+
 # Initialize text-to-speech engine
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
