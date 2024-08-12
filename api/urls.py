@@ -1,10 +1,5 @@
 # api/urls.py
 from django.urls import path
-from .views import (
-    wish_me, take_command, get_weather, search_wikipedia, tell_joke, home,
-    text_detection_view, face_recognition_view, label_image_view, detect_objects_view,
-    identify_language_view, detect_landmark_view
-)
 from . import views2
 
 urlpatterns = [
